@@ -13,7 +13,7 @@ Commodore and IBM.<br>
 ## Hardware Specifications
 
 - CPU: Motorola 68000 at ~8/12MHz
-- VDP: Tang Nano 9K. Codename - Killy
+- VDP: Tang Primer 20K. Codename - Killy
 - APU: YM3812 (OPL2) + DAC
 - ROM: 256KB Flash; Stores BIOS and Kernel
 - RAM: Shipped with 256KB of Static RAM; Has four RAM expansion modules,
@@ -78,7 +78,7 @@ REFS:
 		- YM3014B -> DAC
 		- LM358 | TL072 | NE5532 -> OpAmp
 	IO:
-		- ATmega324P | ATmega1284P -> IO Controller
+		- ATmega32A | ATmega324P -> IO Controller
 		- 16MHz crystal oscillator -> Controller Clock
 	SRAM:
 		- AS6C4008-55PCN -> 512Kx8 = 512KB
