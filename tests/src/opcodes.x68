@@ -1,5 +1,4 @@
-; Test every opcode
-; Inspired by: https://github.com/Clownacy/clownassembler
+; Taken from: https://github.com/Clownacy/clownassembler
 
 .group_0000:
 	; Group: 0b0000 -> Bit Manipulation/MOVEP/Immediate
