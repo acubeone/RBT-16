@@ -1,8 +1,63 @@
 ---
 If:
+    PathMatch: [.*\.cpp, .*\.hpp]
+CompileFlags:
+    Add: [-xc++]
+    Compiler: clang++
+Diagnostics:
+    UnusedIncludes: Strict
+    MissingIncludes: Strict
+    ClangTidy:
+        FastCheckFilter: Loose
+        Add:
+            [
+                "bugprone-*",
+                "clang-analyzer-*",
+                "misc-*",
+                "modernize-*",
+                "performance-*",
+                "portability-*",
+                "readability-*",
+            ]
+        Remove:
+            [
+                "bugprone-easily-swappable-parameters",
+                "bugprone-integer-division",
+                "bugprone-implicit-widening-of-multiplication-result",
+                "bugprone-narrowing-conversions",
+                "bugprone-reserved-identifier",
+                "bugprone-switch-missing-default-case",
+                "bugprone-unchecked-optional-access",
+                "clang-analyzer-optin.osx.*",
+                "clang-analyzer-osx.*",
+                "misc-confusable-identifiers",
+                "misc-no-recursion",
+                "misc-non-private-member-variables-in-classes",
+                "misc-static-assert",
+                "misc-use-anonymous-namespace",
+                "modernize-avoid-c-arrays",
+                "modernize-avoid-c-style-cast",
+                "modernize-use-nodiscard",
+                "modernize-use-trailing-return-type",
+                "performance-no-int-to-ptr",
+                "readability-braces-around-statements",
+                "readability-function-cognitive-complexity",
+                "readability-function-size",
+                "readability-identifier-length",
+                "readability-implicit-bool-conversion",
+                "readability-magic-numbers",
+                "readability-named-parameter",
+                "readability-simplify-boolean-expr",
+                "readability-suspicious-call-argument",
+                "readability-uppercase-literal-suffix",
+            ]
+
+---
+If:
     PathMatch: [.*\.c, .*\.h, .*\.inc]
 CompileFlags:
-    Add: [-xc]
+    Add: [-xc, -std=c11]
+    Remove: [-std=c++20]
     Compiler: clang
 Diagnostics:
     UnusedIncludes: Strict

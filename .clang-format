@@ -38,3 +38,44 @@ SpaceBeforeCpp11BracedList: true
 SpaceInEmptyBlock: true
 TabWidth: 4
 UseTab: Always
+
+---
+BasedOnStyle: LLVM
+Language: Cpp
+
+AlignAfterOpenBracket: BlockIndent
+AlignConsecutiveMacros:
+    Enabled: true
+AlignConsecutiveShortCaseStatements:
+    Enabled: true
+AlignEscapedNewlines: LeftWithLastLine
+AlignOperands: AlignAfterOperator
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortBlocksOnASingleLine: Empty
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+AlwaysBreakBeforeMultilineStrings: true
+BinPackParameters: false
+BreakBeforeBinaryOperators: NonAssignment
+BreakConstructorInitializers: BeforeComma
+BreakTemplateDeclarations: Yes
+ColumnLimit: 90
+Cpp11BracedListStyle: false
+IncludeBlocks: Regroup
+IndentExternBlock: NoIndent
+IndentGotoLabels: false
+IndentPPDirectives: AfterHash
+IndentWidth: 4
+InsertBraces: false
+InsertNewlineAtEOF: true
+KeepEmptyLines:
+    AtEndOfFile: true
+    AtStartOfBlock: false
+PackConstructorInitializers: NextLineOnly
+PenaltyBreakAssignment: 100
+PenaltyReturnTypeOnItsOwnLine: 200
+ReferenceAlignment: Left
+SpaceBeforeCpp11BracedList: true
+SpaceInEmptyBlock: true
+TabWidth: 4
+UseTab: Always

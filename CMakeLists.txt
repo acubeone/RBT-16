@@ -1,8 +1,8 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.29)
 project(
 	rbt
 	VERSION 0.1.0
-	LANGUAGES C
+	LANGUAGES C CXX
 )
 
 option(WARNINGS_AS_ERRORS "Treat compiler warnings as errors." ON)
