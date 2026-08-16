@@ -14,7 +14,7 @@ Commodore and IBM.<br>
 
 - CPU: Motorola 68000 at ~8/12MHz
 - VDP: Tang Primer 20K. Codename - Killy
-- APU: YM3812 (OPL2) + DAC
+- APU: 2x YM2149 + DAC
 - ROM: 256KB Flash; Stores BIOS and Kernel
 - RAM: Shipped with 256KB of Static RAM; Has four RAM expansion modules,
   with up to 4MB max RAM
@@ -74,8 +74,7 @@ REFS:
 			- HDMI is auto-detected; Turns VGA and S-Video off if connected
 			- Buy debug dock for the Tang Primer 20K
 	APU:
-		- YM3812
-		- YM3014B -> DAC
+		- 2xYM2149
 		- LM358 | TL072 | NE5532 -> OpAmp
 	IO:
 		- ATmega32A | ATmega324P -> IO Controller

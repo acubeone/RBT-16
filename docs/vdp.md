@@ -68,7 +68,7 @@ Word 0:
     V  .  v  h  W  W  x  x  x  x  x  x  x  x  x  x
 
     [9:0]   x - X position (0-1023)
-    [11:10] W - sprite's width (8-64)
+    [11:10] W - sprite width (8-64)
     [12:12] h - flip horizontal
     [13:13] v - flip vertical
     [15:15] V - visible
@@ -78,7 +78,7 @@ Word 1:
     .  .  .  .  H  H  .  y  y  y  y  y  y  y  y  y
 
     [9:0]   y - Y position (0-511)
-    [11:10] H - sprite's height (8-64)
+    [11:10] H - sprite height (8-64)
 
 Word 2:
     F  E  D  C  B  A  9  8  7  6  5  4  3  2  1  0
@@ -351,7 +351,7 @@ VDP_MMIO + 0x28 -> SPR_OAM_BASE | R/W
     F  E  D  C  B  A  9  8  7  6  5  4  3  2  1  0
     .  .  .  .  .  .  .  .  a  a  a  a  a  a  a  a
 
-    [7:0] a - OAM_ADDR -> Sprite's OAM base address (512-byte aligned)
+    [7:0] a - OAM_ADDR -> Sprite OAM base address (512-byte aligned)
 
 ; VRAM_ADDR = OAM_ADDR << 9
 
@@ -556,18 +556,11 @@ VDP_MMIO + 0x94 -> FX_VERTEX_BASE | R/W
 ; Note: FX VDP isn't aware of screen boundaries, Polygons are still computed,
 ; even though, no write is made
 
-VDP_MMIO + 0x96 -> FX_TEX_BASE | R/W
+VDP_MMIO + 0x96 -> FX_TEXTURE | R/W
     F  E  D  C  B  A  9  8  7  6  5  4  3  2  1  0
-    .  .  .  .  .  .  .  .  .  .  a  a  a  a  a  a
+    .  .  S  S  S  s  s  s  .  .  a  a  a  a  a  a
 
     [5:0] a - TEX_ADDR -> Texture base address (2KB aligned)
-
-; VRAM_ADDR = TEX_ADDR << 11
-
-VDP_MMIO + 0x98 -> FX_TEX_SIZE | R/W
-    F  E  D  C  B  A  9  8  7  6  5  4  3  2  1  0
-    .  .  .  .  .  .  .  .  .  .  S  S  S  s  s  s
-
     [2:0] s - TEX_ASPECT -> Texture aspect-ratio (000: Square, 001: Wide, 010: Tall)
     [5:3] S - TEX_SIZE -> Texture size (8-256, see table below)
 
@@ -583,6 +576,8 @@ VDP_MMIO + 0x98 -> FX_TEX_SIZE | R/W
 ; 000 111: Reserved  001 111: Reserved  010 111: Reserved
 ;
 ; 011 000-111 111: Reserved
+
+; VRAM_ADDR = TEX_ADDR << 11
 
 
 ;===================
@@ -622,7 +617,7 @@ VDP_MMIO + 0xf3 -> VDP_ID3 | R ; 0x0a ('\n')
 
 ; Combined 32-bit ID across VDP_ID0..VDP_ID3: [31:0]
 
-; GBE stands for: Gravitational Beam Emitter from Blame!
+; GBE stands for: 'Gravitational Beam Emitter' from Blame!
 
 VDP_MMIO + 0xf4 -> VDP_REV0 | R
     F  E  D  C  B  A  9  8  7  6  5  4  3  2  1  0
